@@ -51,9 +51,23 @@ html, body {
     width: 100vw;           
     height: 100vh;           
     border: none;
-    background: #000;        
-}
+    background: #000;  
 
+  }
+#fullscreenButton {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 9999;               /* on top of canvas */
+    padding: 10px 15px;
+    font-size: 16px;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;               /* ensure visibility */
+}
     .visible {
       visibility: visible;
       opacity: 1.0;
@@ -181,23 +195,11 @@ html, body {
     }
 
   </style>
-
+  
 </head>
 
 <body>
-  <button id="fullscreenButton" style="
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 9999;
-    padding: 10px 15px;
-    font-size: 16px;
-    background: rgba(0,0,0,0.5);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-">Fullscreen</button>
+  <button id="fullscreenButton">Fullscreen</button>
   
   <canvas id="canvas" oncontextmenu="event.preventDefault()" tabindex=-1></canvas>
   <div id="overlayDiv"></div>
